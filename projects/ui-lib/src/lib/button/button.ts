@@ -1,4 +1,4 @@
-import { Component, input, output } from '@angular/core';
+import { Component, computed, input, output } from '@angular/core';
 
 @Component({
   selector: 'ui-button',
@@ -9,8 +9,14 @@ import { Component, input, output } from '@angular/core';
 export class ButtonComponent {
   label = input<string>('Click Me');
   type = input<'primary' | 'secondary'>('primary');
-
   clicked = output<void | string>();
+
+  disabled = input<boolean | string>(false);
+
+  isDisabled = computed(() => {
+    const val = this.disabled();
+    return val === true || val === 'true';
+  });
 
   handleClick() {
     this.clicked.emit('hel');

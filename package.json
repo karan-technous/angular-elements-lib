@@ -6,7 +6,9 @@
     "start": "ng serve",
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
-    "test": "ng test"
+    "test": "ng test",
+    "storybook": "storybook dev -p 6006",
+    "build-storybook": "storybook build"
   },
   "prettier": {
     "printWidth": 100,
@@ -55,6 +57,14 @@
     "@angular-devkit/architect": "^0.2003.0",
     "@angular-devkit/core": "^20.3.0",
     "@angular/platform-browser-dynamic": "^20.3.0",
-    "@compodoc/compodoc": "^1.2.1"
+    "@compodoc/compodoc": "^1.2.1",
+    "@storybook/web-components-vite": "^10.2.19",
+    "@chromatic-com/storybook": "^5.0.1",
+    "@storybook/addon-vitest": "^10.2.19",
+    "lit": "^3.3.2",
+    "vitest": "^4.1.0",
+    "playwright": "^1.58.2",
+    "@vitest/browser-playwright": "^4.1.0",
+    "@vitest/coverage-v8": "^4.1.0"
   }
 }

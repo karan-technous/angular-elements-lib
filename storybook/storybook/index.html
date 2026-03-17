@@ -1,0 +1,81 @@
+<!doctype html>
+<html dir="ltr" lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Design System Playground</title>
+
+    <script type="module" src="/build/stencil-web-component.esm.js"></script>
+    <script nomodule src="/build/stencil-web-component.js"></script>
+
+    <style>
+      body {
+        font-family: Arial;
+        padding: 40px;
+      }
+
+      .controls {
+        margin-bottom: 20px;
+      }
+
+      label {
+        margin-right: 10px;
+      }
+    </style>
+  </head>
+
+  <body>
+    <h2>Button Playground</h2>
+
+    <div class="controls">
+      <label>Variant</label>
+      <select id="variant">
+        <option value="primary">primary</option>
+        <option value="secondary">secondary</option>
+        <option value="danger">danger</option>
+      </select>
+
+      <label>Size</label>
+      <select id="size">
+        <option value="sm">sm</option>
+        <option value="md">md</option>
+        <option value="lg">lg</option>
+      </select>
+
+      <label>Disabled</label>
+      <input type="checkbox" id="disabled" />
+    </div>
+
+    <my-button id="btnCom"> Click Me </my-button>
+
+    <script>
+      window.addEventListener('DOMContentLoaded', () => {
+        const btn = document.getElementById('btnCom');
+        btn.size = 'sm';
+
+        const variant = document.getElementById('variant');
+        const size = document.getElementById('size');
+        const disabled = document.getElementById('disabled');
+
+        variant.addEventListener('change', e => {
+          console.log('called', e.target.value);
+          btn.variant = e.target.value;
+        });
+
+        size.addEventListener('change', e => {
+          console.log('called', e.target.value);
+          btn.size = e.target.value;
+        });
+
+        disabled.addEventListener('change', e => {
+          console.log('called', e.target.value);
+          btn.disabled = e.target.checked;
+        });
+
+        btn.addEventListener('buttonClick', () => {
+          alert('Button clicked!');
+        });
+      });
+    </script>
+  </body>
+</html>

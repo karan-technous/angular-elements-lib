@@ -1,4 +1,5 @@
 import 'zone.js';
+import './polyfills';
 
 import { createApplication } from '@angular/platform-browser';
 import { createCustomElement } from '@angular/elements';

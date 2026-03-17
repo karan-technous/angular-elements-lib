@@ -1,0 +1,28 @@
+{
+  "name": "storybook",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "storybook": "storybook dev -p 6006",
+    "build-storybook": "storybook build"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "dependencies": {
+    "storybook": "^8.6.18"
+  },
+  "devDependencies": {
+    "@storybook/addon-essentials": "^8.6.18",
+    "@storybook/builder-webpack5": "^8.6.18",
+    "@storybook/core": "^8.6.18",
+    "@storybook/web-components-webpack5": "^8.6.18",
+    "@types/node": "^25.5.0",
+    "lit": "^3.3.2",
+    "ts-loader": "^9.5.4",
+    "typescript": "^5.9.3"
+  }
+}
