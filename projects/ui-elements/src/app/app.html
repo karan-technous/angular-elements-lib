@@ -1,3 +1,13 @@
 <h1>working</h1>
 
 <ui-button label="From Web Component" type="primary" (clicked)="clickedFun($event)"> </ui-button>
+
+
+<ui-dropdown
+  [label]="'Select User'"
+  [options]="[
+    { label: 'John', value: 1 },
+    { label: 'Jane', value: 2 }
+  ]"
+  (valueChange)="onChange($event)"
+></ui-dropdown>

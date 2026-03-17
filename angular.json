@@ -104,6 +104,36 @@
               "projects/ui-elements/src/styles.scss"
             ]
           }
+        },
+        "storybook": {
+          "builder": "@storybook/angular:start-storybook",
+          "options": {
+            "configDir": "projects/ui-elements/.storybook",
+            "browserTarget": "ui-elements:build",
+            "compodoc": true,
+            "compodocArgs": [
+              "-e",
+              "json",
+              "-d",
+              "projects/ui-elements"
+            ],
+            "port": 6006
+          }
+        },
+        "build-storybook": {
+          "builder": "@storybook/angular:build-storybook",
+          "options": {
+            "configDir": "projects/ui-elements/.storybook",
+            "browserTarget": "ui-elements:build",
+            "compodoc": true,
+            "compodocArgs": [
+              "-e",
+              "json",
+              "-d",
+              "projects/ui-elements"
+            ],
+            "outputDir": "dist/storybook/ui-elements"
+          }
         }
       }
     }

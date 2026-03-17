@@ -1,0 +1,53 @@
+<!-- LABEL -->
+<div class="label-container" *ngIf="label()">
+  <label>{{ label() }}</label>
+</div>
+
+<!-- INPUT BOX -->
+<div
+  #container
+  class="dropdown"
+  [class.disabled]="disabled()"
+  (click)="toggle()"
+>
+  <div class="dropdown-content">
+
+    <!-- Selected / Placeholder -->
+    <span *ngIf="selected(); else placeholderTpl">
+      {{ getLabel() }}
+    </span>
+
+    <ng-template #placeholderTpl>
+      <span class="placeholder">{{ placeholder() }}</span>
+    </ng-template>
+
+    <!-- Icon -->
+    <span class="icon">
+      {{ isOpen() ? '▲' : '▼' }}
+    </span>
+  </div>
+</div>
+
+<!-- DROPDOWN PANEL -->
+<div class="panel" *ngIf="isOpen()">
+
+  <!-- SEARCH -->
+  <input
+    type="text"
+    placeholder="Search..."
+    (input)="search.set($any($event.target).value)"
+  />
+
+  <!-- OPTIONS -->
+  <div class="options">
+    <div
+      *ngFor="let option of filteredOptions()"
+      class="option"
+      [class.disabled]="option.disabled"
+      (click)="select(option)"
+    >
+      {{ option.label }}
+    </div>
+  </div>
+
+</div>

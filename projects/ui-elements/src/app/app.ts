@@ -13,4 +13,8 @@ export class App {
   clickedFun(e: any) {
     console.log('called', e);
   }
+
+  onChange(e: any) {
+    console.log('first=', e);
+  }
 }
